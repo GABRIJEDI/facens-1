@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LP - Site Responsivo</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="header-principal">
+        <div class="container-header">
+            <a href="#" class="logo">Cachorro</a>
+
+            <button id="btn-mobile" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir Menu">
+                <span class="hamburguer"></span>
+            </button>
+            
+            <nav id="menu-principal">
+                <ul>
+                    <li><a href="#home">chacorro</a></li>
+                    <li><a href="#produtos">chacorro</a></li>
+                    <li><a href="#streaming">chacorro</a></li>
+                    <li><a href="#contato">chacorro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="carrossel-sec" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="img/cachorro.jpg" class="d-block w-100" alt="carrossel">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>chacorro</h5>
+                        <p>chacorro</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="img/cachorro2.jpg" class="d-block w-100" alt="cachorro">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>chacorro</h5>
+                        <p>chacorro</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrossel-sec" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrossel-sec" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </section>
+
+        <section id="banner-destaque">
+            <div class="container-banner">
+                <img src="img/cachorro1.jpg" alt="Ilustração de destaque">
+
+                <div class="texto-banner">
+                    <h2>chacorro   </h2>
+                    <p>oi professor, bom final de semana</p>
+                    <a href="#saiba-mais" class="btn-saiba-mais">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/menu.js"></script>
+
+</body>
+</html>
