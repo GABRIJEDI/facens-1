@@ -1,0 +1,254 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --cor-primaria: #007bff; 
+    --cor-fundo: #f4f4f9;
+    --cor-texto: #333;
+    --cor-header: #ffffff; 
+    --cor-hover: #0056b3;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+
+main {
+    padding-top: 60px; 
+}
+
+
+#header-principal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-header);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1030; 
+}
+
+.container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+
+#menu-principal ul {
+    list-style: none;
+    display: flex;
+}
+
+#menu-principal ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#menu-principal ul li a:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-header);
+}
+
+
+#btn-mobile {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 10; 
+}
+
+.hamburguer {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-texto);
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-texto);
+    position: absolute;
+    transition: transform 0.3s;
+}
+
+.hamburguer::before {
+    top: -8px;
+}
+
+.hamburguer::after {
+    top: 8px;
+}
+
+
+@media (max-width: 768px) {
+    
+    #btn-mobile {
+        display: block; 
+    }
+
+    #menu-principal {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 100%; 
+        left: 0;
+        background-color: var(--cor-header);
+        
+        max-height: 0; 
+        overflow: hidden;
+        
+        transition: max-height 0.3s ease-out; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #menu-principal.active {
+        max-height: 300px; 
+    }
+
+    #menu-principal ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    #menu-principal ul li a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    #menu-principal.active + #btn-mobile .hamburguer {
+        transform: rotate(45deg);
+    }
+
+    #menu-principal.active + #btn-mobile .hamburguer::before {
+        transform: rotate(90deg) translate(-8px, 0);
+        top: 0;
+    }
+
+    #menu-principal.active + #btn-mobile .hamburguer::after {
+        transform: rotate(90deg) translate(8px, 0);
+        top: 0;
+    }
+
+}
+
+#carrossel-sec {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.carousel-item img {
+    height: 500px; 
+    object-fit: cover; 
+}
+
+@media (max-width: 768px) {
+    #carrossel-sec {
+        max-height: 300px; 
+    }
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+
+#banner-destaque {
+    background-color: #e0f7fa; 
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.container-banner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+#banner-destaque img {
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.texto-banner {
+    width: 60%;
+    text-align: left;
+}
+
+.texto-banner h2 {
+    color: var(--cor-primaria);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.texto-banner p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #28a745; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-out, transform 0.3s;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px); 
+}
+
+@media (max-width: 768px) {
+    .container-banner {
+        flex-direction: column; 
+    }
+    #banner-destaque img {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+    .texto-banner {
+        width: 100%;
+        text-align: center;
+    }
+}
